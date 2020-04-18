@@ -1,4 +1,26 @@
 {% extends "layout.html" %}
 {% block content %}
-    <h1>Compose New Entry On Your Journal</h1>
+   <div class="content_section">
+   		<form method="POST" action="">
+   			{{ form.hidden_tag() }}
+   			<fieldset class="form-group">
+   				<legend class="border-bottom mb-4">Post Your Entry Now</legend>
+   				<div class="form-group">
+   					{{ form.EntryDate.label(class="form-control-label") }}
+   					{{ form.EntryDate(class="form-control") }}
+   				</div>
+   				<div class="form-group">
+   					{{ form.EntryTopic.label(class="form-control-label") }}
+   					{{ form.EntryTopic(class="form-control form-control-lg") }}
+   				</div>
+   				<div class="form-group">
+   					{{ form.EntryBody.label(class="form-control-label") }}
+   					{{ form.EntryBody(class="form-control form-control-lg") }}
+   				</div>
+   			</fieldset>
+   			<div class="form-group">
+   				{{ form.EntrySubmit(class="btn btn-outline-info")}}
+   			</div>
+   		</form>
+   </div>
 {% endblock content %}
